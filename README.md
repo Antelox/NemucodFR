@@ -4,7 +4,7 @@ Extract the key and use it to recover encrypted files by Nemucod Ransomware
 - **NemucodKE.py** - the python script to extract the key (*KE* means Key Extractor);
 - **NemucodFR.py** - the python script to recover the encrypted file (*FR* means File Recovery).
 
-In the last variant of **Nemucod Ransomware**, discovered by *ReaQta's R&D Team* [1], the file is encrypted through a custom xorer that XORs the first *1024* bytes of each targeted file with a *36* bytes long randomly generated key. In the previous two Nemucod variants, you could see first a xor operation like the one found in this variant but with an hardcoded key (so not randomly generated) inside the executabled downloaded by the Javascript code [2]. Then Nemucod has replaced the xor encryption process with 7zip CLI version [3]. Now it's came back with the xor encryption approach.
+In the last variant of **Nemucod Ransomware**, discovered by *ReaQta's R&D Team* [1], the file is encrypted through a custom xorer that XORs the first *1024* bytes of each targeted file with a *36* bytes long randomly generated key. In the previous two Nemucod variants, you could see first a xor operation like the one found in this variant but with an hardcoded key (so not randomly generated) inside the executabled downloaded by the Javascript code [2]. Then Nemucod has replaced the xor encryption process with 7zip CLI version [3]. Now it's come back with the xor encryption approach.
 
 [1] https://glot.io/snippets/ee7hiif87k
 
