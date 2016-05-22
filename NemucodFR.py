@@ -61,7 +61,7 @@ print "\n*Nemucod File Recovery*\n"
 if len(sys.argv) == 5:
 	os.chdir(sys.argv[1])
 	for file in glob.glob("*.crypted"):
-		decrypt(file,sys.argv[2],sys.argv[3],sys.argv[4])
+		decrypt(file,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]))
 else:
 	print "*ERROR: Incorrect number of arguments passed to the script!\n"
 	print "Example: python NemucodFR.py folder key header_size key_size\n"
