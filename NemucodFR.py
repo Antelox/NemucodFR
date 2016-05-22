@@ -19,7 +19,7 @@ import os
 def decrypt(file, key, header_size = None):
 	if header_size is None:
 		header_size = 1024
-	print header_size
+
 	try:
 		fencrypted = open(file, 'rb')
 		
