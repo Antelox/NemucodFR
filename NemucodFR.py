@@ -29,7 +29,7 @@ import sys
 import glob
 import os
 
-def decrypt(file, key, hsize, ksize):
+def decrypt(file, key, hsize):
 	try:
 		fencrypted = open(file, 'rb')
 		
@@ -41,11 +41,11 @@ def decrypt(file, key, hsize, ksize):
 		
 		if filesize <= hsize:
 			for i in range(0,filesize):
-				recovered = recovered + chr(ord(content_encrypted[i])^ord(key[i%ksize]))
+				recovered = recovered + chr(ord(content_encrypted[i])^ord(key[i%len(key)]))
 			full_recovered = recovered
 		else:
 			for i in range(0,hsize):
-				recovered = recovered + chr(ord(content_encrypted[i])^ord(key[i%ksize]))
+				recovered = recovered + chr(ord(content_encrypted[i])^ord(key[i%len(key)]))
 			full_recovered = recovered + content_encrypted[hsize:]
 		
 		open(file[:-8], 'wb').write(full_recovered)
@@ -58,14 +58,13 @@ def decrypt(file, key, hsize, ksize):
 #main
 print "\n*Nemucod File Recovery*\n"
 
-if len(sys.argv) == 5:
+if len(sys.argv) == 4:
 	os.chdir(sys.argv[1])
 	for file in glob.glob("*.crypted"):
-		decrypt(file,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]))
+		decrypt(file,sys.argv[2],int(sys.argv[3]))
 else:
 	print "*ERROR: Incorrect number of arguments passed to the script!\n"
 	print "Example: python NemucodFR.py folder key header_size key_size\n"
 	print "folder: a folder which contains encrypted files by Nemucod with .crypted extension;\n"
 	print "key: the key recovered with the NemucodKE.py script;\n"
-	print "header_size: size, from beginning of the file, which it was encrypted - provided by NemucodKE.py script;\n"
-	print "key_size: size of the key - provided by NemucodKE.py script."
+	print "header_size: size, from beginning of the file, which it was encrypted - provided by NemucodKE.py script."

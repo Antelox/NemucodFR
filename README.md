@@ -31,14 +31,13 @@ As a result of the script you will get the key.
 
 After that you got the key, you can use the **NemucodFR.py** script in this manner:
 
-*python NemucodFR.py folder key header_size key_size*
+*python NemucodFR.py folder key header_size*
 
 where:
 
 - *folder* is the folder which contains the .crypted files encrypted and renamed by Nemucod Ransomware;
 - *key* is the key extracted with the previous step;
-- *header_size* is the size, from beginning of the file, which it was encrypted - provided by NemucodKE.py script;
-- *key_size* is the size of the key - provided by NemucodKE.py script.
+- *header_size* is the size, from beginning of the file, which it was encrypted - provided by NemucodKE.py script.
 
 As results we will get the decrypted files (I hope) :D
 

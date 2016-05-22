@@ -42,11 +42,11 @@ if len(sys.argv)== 3:
 		
 	if content_encrypted[1535] == content_plain[1535] and content_encrypted[2000] == content_plain[2000]:
 		print "*INFO*: encrypted header size = 1024 bytes and key size = 36 bytes\n"
-		print "*INFO*: pass these 2 numbers as argument to NemucodFR.py script.\n"
+		print "*INFO*: pass the first number as argument to NemucodFR.py script.\n"
 		key_size = 36
 	else:
 		print "*INFO*: encrypted header size = 2048 bytes and key size = 255 bytes\n"
-		print "*INFO*: pass these 2 numbers as argument to NemucodFR.py script.\n"
+		print "*INFO*: pass the first number as argument to NemucodFR.py script.\n"
 		key_size = 255
 	
 	key = ''
