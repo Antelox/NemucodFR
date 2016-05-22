@@ -6,6 +6,10 @@ Extract the key and use it to recover encrypted files by Nemucod Ransomware
 
 In the last variant of **Nemucod Ransomware**, discovered by *ReaQta's R&D Team* [1], the file is encrypted through a custom xorer that XORs the first *1024* bytes of each targeted file with a *36* bytes long randomly generated key. In the previous two Nemucod variants, you could see first a xor operation like the one found in this variant but with an hardcoded key (so not randomly generated) inside the executabled downloaded by the Javascript code [2]. Then Nemucod has replaced the xor encryption process with 7zip CLI version [3]. Now it's come back with the xor encryption approach.
 
+UPDATE: 05/22/2016
+
+Found in the wild by [@demonslay335](https://twitter.com/demonslay335) a new Nemucod variant which encrypts first 2048 bytes with a key of 255 bytes. The script handles also this one.
+
 [1] https://glot.io/snippets/ee7hiif87k
 
 [2] https://blog.fortinet.com/post/nemucod-adds-ransomware-routine
@@ -27,12 +31,14 @@ As a result of the script you will get the key.
 
 After that you got the key, you can use the **NemucodFR.py** script in this manner:
 
-*python NemucodFR.py folder key*
+*python NemucodFR.py folder key header_size key_size*
 
 where:
 
 - *folder* is the folder which contains the .crypted files encrypted and renamed by Nemucod Ransomware;
-- *key* is the key extracted with the previous step.
+- *key* is the key extracted with the previous step;
+- *header_size* is the size, from beginning of the file, which it was encrypted - provided by NemucodKE.py script;
+- *key_size* is the size of the key - provided by NemucodKE.py script.
 
 As results we will get the decrypted files (I hope) :D
 
