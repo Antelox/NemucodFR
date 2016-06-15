@@ -5,7 +5,7 @@ Nemucod Key Extractor
 Coded by Antelox
 Twitter: @Antelox
 UIC R.E. Academy - quequero.org
-Version: 0.3 - 06/11/2016
+Version: 0.35 - 06/15/2016
 
 Released under MIT License
 
@@ -61,8 +61,8 @@ if len(sys.argv) == 3:
 			else:
 				key = key + hex(ord(content_encrypted[i])^ord(content_plain[i])) + ", "
 	
-		print "\n*KEY FOUND*: key.txt file created."
-		open("key.txt", "wb").write("[" + key + "]")
+		print "\n*KEY FOUND*: file \"key_2048_255.txt\" created."
+		open("key_2048_255.txt", "wb").write("[" + key + "]")
 	
 		fencrypted.close()
 		fplain.close()
@@ -83,8 +83,8 @@ elif len(sys.argv) == 4:
 		else:
 			key = key + hex(ord(content_encrypted[i])^ord(content_plain[i])) + ", "
 
-	print "\n*KEY FOUND*: key.txt file created."
-	open("key.txt", "wb").write("[" + key + "]")
+	print "\n*KEY FOUND*: file \"key_1024_%s.txt\" created." % str(sys.argv[3])
+	open("key_1024_" + str(sys.argv[3]) + ".txt", "wb").write("[" + key + "]")
 
 	fencrypted.close()
 	fplain.close()
