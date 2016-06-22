@@ -4,6 +4,8 @@ Extract the key and use it to recover encrypted files by Nemucod Ransomware
 - **NemucodKE.py** - the python script to extract the key (*KE* means Key Extractor);
 - **NemucodFR.py** - the python script to recover the encrypted file (*FR* means File Recovery).
 
+*NOTE*: You must download Python 2.7
+
 # Changelog
 
 FIRST COMMIT: 05/01/2016 - ver. 0.1
