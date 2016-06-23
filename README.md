@@ -1,10 +1,13 @@
 # NemucodFR
-Extract the key and use it to recover encrypted files by Nemucod Ransomware
+Extract the key and use it to recover files that have been excrypted by Nemucod Ransomware
 
+- **NemucodEK.txt** - an example key stored in a .txt file. Do not use for your own recovery (*EK* means Example Key);
 - **NemucodKE.py** - the python script to extract the key (*KE* means Key Extractor);
-- **NemucodFR.py** - the python script to recover the encrypted file (*FR* means File Recovery).
+- **NemucodFR.py** - the python script to recover the encrypted file (*FR* means File Recovery);
+- **NemucodPT.py** - the python script to test paths in case of errors (*PT* means Path Tester);
+- **NemucodRE.py** - the python script to remove the encrypted file (*RE* means Remove Encrypted).
 
-*NOTE*: You must download Python 2.7
+*NOTE*: You must use Python 2.7.* not 3+
 
 # Changelog
 
@@ -24,6 +27,14 @@ UPDATE: 06/15/2016 - ver. 0.35
 
 NemucodKE.py saves the text file which contains the key with different names based on the header/key length.
 NemucodFR.py searches recursively files and folders from the path passed as argument (open the command prompt as Administrator).
+
+UPDATE: 06/22/2016 - ver. 0.36
+
+NemucodPT.py helps troubleshoot errors with paths that may break the execution of the other scripts.
+NemucodRE.py searches recursively files and folders from the path passed as argument (open the command prompt as Administrator).
+Language tweaks all round.
+
+# References
 
 [1] https://glot.io/snippets/ee7hiif87k
 
@@ -102,7 +113,8 @@ I thought this script as an additional possibility that a Nemucod's victim can h
 
 # Disclaimer
 *Use these scripts at your own risk. I'm not responsible for any data loss!
-Anyway the scripts don't overwrite and/or delete any files.*
+Regardless, the main scripts don't overwrite and/or delete any files and create new files with the decrypted data.
+Only the NemucodRE.py script removes data from your devices.*
 
 # License
 See the LICENSE file for license rights and limitations (*MIT*).
