@@ -108,7 +108,7 @@ As results we will get the decrypted files (I hope) :D
 
 If it's all ok and you want to delete .crypted files from your drives, you can use **NemucodRE.py** script in this manner:
 
-	*python NemucodRE.py "C:\"*
+*python NemucodRE.py "C:\"*
 
 with this command you will delete whole .crypted files on drive C.
 
