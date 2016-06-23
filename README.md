@@ -84,7 +84,10 @@ After that you got the right key text file, you can use the **NemucodFR.py** scr
 
 where:
 
-- *path* is the path to a folder which contains the .crypted files encrypted and renamed by Nemucod Ransomware. The script, starting from the path passed as argument, will iterate recursively files and sub-directories to search for .crypted files, so make sure that the key is the right one before to run this script for example from the C:\\. See [here](https://github.com/Antelox/NemucodFR#how-to-know-if-the-script-has-extracted-the-right-key).
+- *path* is the path to a folder which contains the .crypted files encrypted and renamed by Nemucod Ransomware. The script, starting from the path passed as argument, will iterate recursively files and sub-directories to search for .crypted files, so make sure that the key is the right one before to run this script, for example, from the C:\\ (more info [here](https://github.com/Antelox/NemucodFR#how-to-know-if-the-script-has-extracted-the-right-key)). If you want to make a try about the paths (mapped drives on your network, etc.), before that you run this script, you can use the **NemucodPT.py** script in this manner:
+
+	*python NemucodPT.py path_to_test*
+
 - *key_file* the file which contains the recovered key by NemucodKE.py script. It can be the following ones:
 	
   _key\_1024\_36.txt_
@@ -102,6 +105,14 @@ where:
 	_2048_
 
 As results we will get the decrypted files (I hope) :D
+
+If it's all ok and you want to delete .crypted files from your drives, you can use **NemucodRE.py** script in this manner:
+
+	*python NemucodRE.py "C:\"*
+
+with this command you will delete whole .crypted files on drive C.
+
+*NOTE*: Execute this command ONLY after that you have recovered the files!!!
 
 Of course this is only an example. Any files of which you have a backup copy on external device and/or in a cloud storage service will be fine, the important is that it's the same one that was encrypted.
 
