@@ -1,7 +1,6 @@
 # NemucodFR
 Extract the key and use it to recover files that have been excrypted by Nemucod Ransomware
 
-- **NemucodEK.txt** - an example key stored in a .txt file. Do not use for your own recovery (*EK* means Example Key);
 - **NemucodKE.py** - the python script to extract the key (*KE* means Key Extractor);
 - **NemucodFR.py** - the python script to recover the encrypted file (*FR* means File Recovery);
 - **NemucodPT.py** - the python script to test paths in case of errors (*PT* means Path Tester);
